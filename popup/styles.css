@@ -3,16 +3,27 @@ body {
   margin: 0;
   padding: 0;
   width: 300px;
-  height: 400px;
+  height: 450px;
+  background-color: #f9f9f9;
 }
 
 .container {
-  padding: 10px;
+  padding: 15px;
 }
 
 h1 {
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
+  margin-bottom: 10px;
+}
+
+#search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
 }
 
 #clipboard-list {
@@ -22,11 +33,14 @@ h1 {
   max-height: 300px;
   overflow-y: auto;
   border: 1px solid #ddd;
+  border-radius: 3px;
+  background: white;
 }
 
 #clipboard-list li {
   padding: 8px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
 }
 
 #clipboard-list li:last-child {
@@ -36,13 +50,27 @@ h1 {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #dc3545;
+  background-color: #007bff;
   color: white;
   border: none;
   cursor: pointer;
   border-radius: 3px;
+  font-size: 14px;
 }
 
 button:hover {
-  background-color: #b02a37;
+  background-color: #0056b3;
+}
+
+#clear-history {
+  margin-top: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
 }
