@@ -47,8 +47,14 @@ h1 {
   border-bottom: none;
 }
 
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
 button {
-  width: 100%;
+  flex: 1;
   padding: 10px;
   background-color: #007bff;
   color: white;
@@ -63,7 +69,11 @@ button:hover {
 }
 
 #clear-history {
-  margin-top: 10px;
+  background-color: #dc3545;
+}
+
+#clear-history:hover {
+  background-color: #b02a37;
 }
 
 ::-webkit-scrollbar {

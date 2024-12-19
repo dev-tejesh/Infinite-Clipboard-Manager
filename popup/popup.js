@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const clipboardList = document.getElementById("clipboard-list");
   const searchBar = document.getElementById("search-bar");
   const clearHistoryBtn = document.getElementById("clear-history");
+  const exportHistoryBtn = document.getElementById("export-history");
   let clipboardHistory = []; // Store the clipboard history in memory
 
   // Load clipboard history from storage
@@ -43,5 +44,27 @@ document.addEventListener("DOMContentLoaded", () => {
       clipboardHistory = [];
       renderClipboardList([]);
     });
+  });
+
+  // Export clipboard history as a .txt file
+  exportHistoryBtn.addEventListener("click", () => {
+    if (clipboardHistory.length === 0) {
+      alert("No clipboard history to export.");
+      return;
+    }
+
+    const blob = new Blob(
+      clipboardHistory.map((item) => `${item}\n`),
+      {
+        type: "text/plain",
+      }
+    );
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "clipboard-history.txt"; // File name
+    a.click();
+    URL.revokeObjectURL(url);
   });
 });
