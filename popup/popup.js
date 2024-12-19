@@ -25,6 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
     history.forEach((item) => {
       const li = document.createElement("li");
       li.textContent = item;
+      li.style.cursor = "pointer"; // Add pointer cursor for better UX
+
+      // Add click event listener to copy text to clipboard
+      li.addEventListener("click", () => {
+        navigator.clipboard
+          .writeText(item)
+          .then(() => {
+            alert("Copied to clipboard: " + item); // Optional: Show feedback
+          })
+          .catch((err) => {
+            console.error("Failed to copy text: ", err);
+          });
+      });
+
       clipboardList.appendChild(li);
     });
   }
