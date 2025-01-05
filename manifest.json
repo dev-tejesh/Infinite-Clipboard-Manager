@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "Infinite Clipboard Manager",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Save every copied text in Chrome with infinite clipboard history.",
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
